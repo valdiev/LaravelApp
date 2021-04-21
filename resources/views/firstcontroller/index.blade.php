@@ -1,4 +1,5 @@
-@extends("layouts.general")
+@extends("layouts.template")
+
 
 @section("content")
   <h1 class="font">Index</h1>

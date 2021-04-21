@@ -1,4 +1,5 @@
-@extends("layouts.general")
+@extends("layouts.template")
+
 
 @section("content")
 
