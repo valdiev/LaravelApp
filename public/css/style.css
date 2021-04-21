@@ -1,0 +1,53 @@
+.container{
+  width: 80%;
+  margin: auto;
+}
+
+
+.font{
+  font-family: 'Montserrat', sans-serif;
+}
+
+img{
+  width: 250px;
+  height: auto;
+}
+
+.menu{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.menu-element{
+
+}
+
+.menu-element{
+  display: flex;
+  text-decoration: none;
+  background-color: F8400E;
+  color: #fff;
+  width: 150px;
+  height: 80px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.menu-element:hover{
+  background-color: #4C4C4E;
+}
+
+.album{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.pic{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
