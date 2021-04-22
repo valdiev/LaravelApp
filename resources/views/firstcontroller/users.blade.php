@@ -3,10 +3,14 @@
 
 @section("content")
 
-  <h1>profil de {{$user->name}}</h1>
+  <h1>{{$user->name}}</h1>
+  <div class="img_profil">
+    <img src="{{$user->profil}}" alt="{{$user->name}}">
+  </div>
   <ul>
-    <li><p>Follow {{$user->IFollowThem()->count()}} personnes</p></li>
-    <li><p>Followed by {{$user->theyFollowMe()->count()}} personnes</p></li>
+    <li><p>{{$user->photos->count()}}<br>publications</p></li>
+    <li><p>{{$user->IFollowThem()->count()}}<br>abonnés</p></li>
+    <li><p>{{$user->theyFollowMe()->count()}}<br>abonnements</p></li>
   </ul>
 
 
@@ -21,13 +25,13 @@
 
     @endif
   @endauth
-
-  @foreach($user->photos as $p)
-          <div class="pic">
-            <img src="{{$p->url}}" alt="{{$p->title}}" />
-            <span>{{$p->title}}</span>
-          </div>
-  @endforeach
-
+  <div class="album">
+    @foreach($user->photos as $p)
+            <div class="pic">
+              <img src="{{$p->url}}" alt="{{$p->title}}" />
+              <span>{{$p->title}}</span>
+            </div>
+    @endforeach
+  </div>
 
 @endsection
