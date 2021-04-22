@@ -2,14 +2,13 @@
   <title>Mon application</title>
   <meta charset="utf-8">
   <meta name="csrf-token" content="{{ csrf_token() }}">
-  <link href="/css/style.css" type="text/css" rel="stylesheet"/>
+  <link href="/css/main.css" type="text/css" rel="stylesheet"/>
   <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 
 
-<div class="">
+<div class="container">
   <div class="menu">
         <a class="menu-element font" href="/">Accueil</a>
         <a class="menu-element font" href="/about">A propos</a>
@@ -48,8 +47,8 @@
           
       @endguest
   </div>
-</div>
 
-<main class="container">
-    @yield("content")
-</main>
+    <main class="content">
+        @yield("content")
+    </main>
+</div>
