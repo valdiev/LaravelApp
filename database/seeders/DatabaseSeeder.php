@@ -27,7 +27,7 @@ class DatabaseSeeder extends Seeder
             'password' => bcrypt("azerty")
         ]);
 
-      for ($i = 1; $i <= 3; $i++) {
+      for ($i = 1; $i <= 5; $i++) {
           DB::table('photos')->insert([
               'title' => Str::random(10),
               'url' => "/images/$i.jpg",
