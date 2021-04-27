@@ -5,6 +5,9 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
+use App\Models\Like;
+use App\Models\User;
+use App\Models\Photo;
 
 class DatabaseSeeder extends Seeder
 {
@@ -27,6 +30,7 @@ class DatabaseSeeder extends Seeder
             'password' => bcrypt("azerty")
         ]);
 
+    //PHOTOS
       for ($i = 1; $i <= 5; $i++) {
           DB::table('photos')->insert([
               'title' => Str::random(10),
@@ -35,5 +39,15 @@ class DatabaseSeeder extends Seeder
               "user_id" => $i % 2 + 1
           ]);
       }
+
+    //LIKES
+    //   for ($j = 1; $j<=10; $j++) {
+    //       $like = new Like();
+
+    //       $like->user_id = User::all()->random(1)->first()->id;
+    //       $like->user_id = Photo::all()->random(1)->first()->id;
+
+    //       $like->save();
+    //   }
     }
 }

@@ -13,4 +13,8 @@ class Photo extends Model
         // SELECT * FROM users WHERE id = $this->user_id
         return $this->belongsTo("App\Models\User", "user_id");
     }
+
+    public function likes() {
+        return $this->hasMany("App\Models\Like");
+    }
 }
