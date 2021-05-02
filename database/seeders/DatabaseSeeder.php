@@ -21,13 +21,15 @@ class DatabaseSeeder extends Seeder
       DB::table('users')->insert([
             'name' => "john",
             'email' => "utilisateur1@gmail.com",
-            'password' => bcrypt("azerty")
+            'password' => bcrypt("azerty"),
+            'overview' => "John's account"
         ]);
 
         DB::table('users')->insert([
             'name' => "jean",
             'email' => "utilisateur2@gmail.com",
-            'password' => bcrypt("azerty")
+            'password' => bcrypt("azerty"),
+            'overview' => "Jean's account"
         ]);
 
     //PHOTOS
@@ -36,7 +38,7 @@ class DatabaseSeeder extends Seeder
               'title' => Str::random(10),
               'url' => "/images/$i.jpg",
               'note' => $i * 2,
-              "user_id" => $i % 2 + 1
+              "user_id" => $i % 2 + 1,
           ]);
       }
 

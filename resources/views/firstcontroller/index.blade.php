@@ -14,13 +14,8 @@
               <span class="user_name"><a href='/users/{{$p->user_id}}' >{{ $p->user->name }}</a></span>
               <span class="img_likes">{{ $p->likes->count() }} ❤️</span>
 
-              @auth 
-              @if(Auth::id() != $like->id)
-                <a href="#">J'aime !</a>
-              @else
-                <a href="#">Je n'aime plus !</a>
-              @endif
-              @endauth
+
+             
             </div>
           </div>
   @endforeach
