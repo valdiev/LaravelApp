@@ -53,5 +53,9 @@ class FirstController extends Controller
         Auth::user()->IFollowThem()->toggle($id);
         return back();
   }
+
+  public function like($id) {
+        $user = User::findOrFail($id);
+  }
   
 }

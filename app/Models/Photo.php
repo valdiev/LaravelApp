@@ -14,6 +14,18 @@ class Photo extends Model
         return $this->belongsTo("App\Models\User", "user_id");
     }
 
+    public function like($user = null, $liked = true) {
+        $this->likes()->updateOrCreate([
+            'user_id' => $user ? $user->id : auth()->id(),
+        ], [
+            'liked' => $liked, 
+        ]);
+    }
+
+    public function dislike($user = null) {
+        return $this->like($user, false);
+    }
+
     public function likes() {
         return $this->hasMany("App\Models\Like");
     }
