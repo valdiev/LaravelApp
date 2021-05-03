@@ -26,7 +26,7 @@ class Photo extends Model
         return $this->like($user, false);
     }
 */
-    public function likes() {
-        return $this->hasMany("App\Models\Like");
+    public function liked() {
+        return $this->belongsToMany("App\Models\User", "likes", "photo_id", "user_id");
     }
 }

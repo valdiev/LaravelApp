@@ -54,8 +54,9 @@ class FirstController extends Controller
     return back();
   }
 
-  public function like($id) {
-    $user = User::findOrFail($id);
+  public function likes($id) {
+    Auth::user()->likes()->toggle($id);
+    return back();
   }
 
   public function updateoverview(Request $request) {

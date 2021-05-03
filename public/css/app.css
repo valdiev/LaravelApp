@@ -56,6 +56,15 @@ html, body {
   text-decoration: none;
   color: #fff;
 }
+.album .pic .like_btn {
+  position: absolute;
+  bottom: 14px;
+  left: 20px;
+}
+.album .pic .like_btn a {
+  color: #fff;
+  font-size: 24px;
+}
 .album .pic:hover .img_bg {
   opacity: 1;
 }
