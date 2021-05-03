@@ -14,12 +14,13 @@
               <span class="img_likes">{{ $p->liked()->count() }} ❤️</span>
             </div>
             <div class="like_btn">
-              @if(Auth::user()->likes->contains($p->id))
-                  <a href="/likes/{{$p->id}}"><i class="fas fa-heart"></i></a>
-              @else
-                  <a href="/likes/{{$p->id}}"><i class="far fa-heart"></i></a>
-              @endif
-              
+              @auth
+                @if(Auth::user()->likes->contains($p->id))
+                    <a href="/likes/{{$p->id}}"><i class="fas fa-heart"></i></a>
+                @else
+                    <a href="/likes/{{$p->id}}"><i class="far fa-heart"></i></a>
+                @endif
+              @endauth  
             </div>
           </div>
   @endforeach
