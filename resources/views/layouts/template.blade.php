@@ -16,9 +16,12 @@
 
 <div class="container">
   <div class="menu">
-        <a class="menu-element font" href="/">Accueil</a>
-        <a class="menu-element font" href="/about">A propos</a>
-        <a class="menu-element font" href="/create">Importer une image</a>
+        <a class="menu-element font" href="/"><i class="fas fa-home"></i></a>
+        <a class="menu-element font" href="/about"><i class="fas fa-search"></i></a>
+        <a class="menu-element font" href="/create"><i class="fas fa-plus-circle"></i></a>
+        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="/users/{{Auth::id()}}" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+            <i class="fas fa-user"></i>
+              </a>
   </div>
   <div class="">
       @guest
@@ -34,10 +37,6 @@
               </li>
           @endif
       @else
-
-              <a id="navbarDropdown" class="nav-link dropdown-toggle" href="/users/{{Auth::id()}}" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                  {{ Auth::user()->name }}
-              </a>
 
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                   <a class="dropdown-item" href="{{ route('logout') }}"

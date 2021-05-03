@@ -2,7 +2,6 @@
 
 
 @section("content")
-  <h1 class="font">Index</h1>
 
 <div class="album">
   @foreach($photos as $p)
@@ -15,7 +14,12 @@
               <span class="img_likes">{{ $p->liked()->count() }} ❤️</span>
             </div>
             <div class="like_btn">
-              <a href="/likes/{{$p->id}}"><i class="far fa-heart"></i></a>
+              @if(Auth::user()->likes->contains($p->id))
+                  <a href="/likes/{{$p->id}}"><i class="fas fa-heart"></i></a>
+              @else
+                  <a href="/likes/{{$p->id}}"><i class="far fa-heart"></i></a>
+              @endif
+              
             </div>
           </div>
   @endforeach
