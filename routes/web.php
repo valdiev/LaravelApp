@@ -29,3 +29,9 @@ Auth::routes();
 Route::get('/users/{id}', [FirstController::class, 'users']);
 /*Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');*/
 Route::get('/changesuivi/{id}', [FirstController::class, 'changesuivi'])->where("id", "[0-9]+") ->middleware("auth");
+
+Route::post('/users/updateoverview', [FirstController::class, 'updateoverview']) ->middleware("auth");
+
+Route::get('/newuser', function() {
+    return redirect("/users/".Auth::id());
+});

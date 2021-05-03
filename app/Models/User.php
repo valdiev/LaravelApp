@@ -55,4 +55,8 @@ class User extends Authenticatable
         return $this->belongsToMany("App\Models\User", "connexion", "to_id", "from_id");
         // SELECT * FROM uers JOIN connexion ON connexion.from_id=users.id WHERE to_id = $this->id
     }
+
+    public function likes() {
+        return $this->hasMany("App\Models\Like");
+    }
 }

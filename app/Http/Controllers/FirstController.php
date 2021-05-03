@@ -49,9 +49,20 @@ class FirstController extends Controller
   }
 
   public function changesuivi($id) {
-        $user = User::findOrFail($id);
-        Auth::user()->IFollowThem()->toggle($id);
-        return back();
+    $user = User::findOrFail($id);
+    Auth::user()->IFollowThem()->toggle($id);
+    return back();
+  }
+
+  public function like($id) {
+    $user = User::findOrFail($id);
+  }
+
+  public function updateoverview(Request $request) {
+    $overview = preg_replace('#<script(.*?)>(.*?)</script>#is', '', $request->input('overview'));
+    Auth::user()->overview = $overview;
+    Auth::user()->save();
+    return back();
   }
   
 }
