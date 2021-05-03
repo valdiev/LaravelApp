@@ -40,13 +40,17 @@
 
     @endif
   @endauth
-  <div class="album">
+  <div class="album user_photo">
     @foreach($user->photos as $p)
             <div class="pic">
               <img src="{{$p->url}}" alt="{{$p->title}}" />
               <span>{{$p->title}}</span>
             </div>
     @endforeach
+  </div>
+
+  <div class="no_photo">
+    <h3>Aucune photo</h3>
   </div>
 
 @endsection

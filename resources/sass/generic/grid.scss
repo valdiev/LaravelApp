@@ -55,6 +55,15 @@ html, body {
                 color: #fff;
             }
         }
+        .like_btn {
+            position: absolute;
+            bottom: 14px;
+            left: 20px;
+        }
+        .like_btn a {
+            color: #fff;
+            font-size: 24px;
+        }
         &:hover {
             .img_bg {
                 opacity: 1;

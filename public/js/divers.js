@@ -15,4 +15,9 @@ $(document).ready(function() {
             return false;
         }
     });
+    $(".no_photo").hide();
+
+    if ( $('.user_photo').children().length == 0 ) {
+        $(".no_photo").show();
+   }
 });

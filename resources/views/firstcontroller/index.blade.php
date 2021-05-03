@@ -12,10 +12,10 @@
             <div class="user_infos">
               <span class="img_title">{{ $p->title }}</span>
               <span class="user_name"><a href='/users/{{$p->user_id}}' >{{ $p->user->name }}</a></span>
-              <span class="img_likes">{{ $p->likes->count() }} ❤️</span>
-
-
-             
+              <span class="img_likes">{{ $p->liked()->count() }} ❤️</span>
+            </div>
+            <div class="like_btn">
+              <a href="/likes/{{$p->id}}"><i class="far fa-heart"></i></a>
             </div>
           </div>
   @endforeach
