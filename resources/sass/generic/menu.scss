@@ -16,4 +16,65 @@
             font-size: clamp(18px, 2vw, 22px);
         }
     }
+    .header {
+        display: flex;
+        justify-content: space-between;
+        height: 80px;
+        align-items: center;
+
+        .logo a{
+            text-decoration: none;
+        }
+        .dropdown_menu {
+            position: relative;
+            button {
+                border: 0px;
+                background: none;
+                cursor: pointer;
+
+                i {
+                    font-size: clamp(18px, 2vw, 22px);
+                    color: #000;
+                }
+            }
+            .connexion_menu {
+                position: absolute;
+                background: whitesmoke;
+                min-width: 160px;
+                padding: 10px 20px;
+                right: 0;
+                top: 50px;
+                z-index: 10;
+                transform: translateY(-10px);
+                opacity: 0;
+                transition: 0.4s all ease;
+                &.show {
+                    opacity: 1;
+                    transform: translateY(0px);
+                }
+
+                &::before {
+                    content: '';
+                    width: 20px;
+                    height: 20px;
+                    background-color: whitesmoke;
+                    transform: rotate(45deg);
+                    position: absolute;
+                    top: -5px;
+                    right: 8px;
+                }
+
+                li {
+                    list-style: none;
+                    margin: 10px 0;
+        
+                    a {
+                        text-decoration: none;
+                        color: #000;
+                    }
+                }
+            }
+
+        }
+    }
 }
