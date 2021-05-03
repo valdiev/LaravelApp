@@ -90,12 +90,30 @@ html, body {
   top: 50%;
 }
 
-.menu {
-  display: flex;
-  width: 100%;
-  margin: auto;
+.formCreate {
+  margin-top: 1rem;
+  margin-bottom: 3rem;
 }
 
-.menu-element {
-  text-decoration: none;
+.formCreate > input {
+  display: block;
+  margin-top: 0.5rem;
+}
+
+.file {
+  margin-bottom: 1rem;
+}
+
+.input {
+  padding: 0.5rem;
+  border: 1px solid #5c5c5c;
+  border-radius: 0.5rem;
+}
+
+.submit {
+  background-color: royalblue;
+  color: white;
+  padding: 0.5rem;
+  border: 0;
+  border-radius: 0.5rem;
 }
