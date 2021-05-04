@@ -28,7 +28,7 @@
   @if(Auth::check() && Auth::id() == $user->id)
   <form id="overviewForm" method="post" action="/users/updateoverview">
     @csrf
-    <input type="hidden" name="overview">
+    <input type="hidden" name="overview"> <i name="overview" class="far fa-edit"></i>
     <button type="submit" class="btn">Modifer</button>
   </form>
   @endif

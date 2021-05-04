@@ -67,3 +67,9 @@ class FirstController extends Controller
   }
   
 }
+
+public function search($s){
+  $users = User::whereRaw("name like concat(?, '%'), [$s]")->get();
+  return view(view: FirstController.search, ["users" =>$users]);
+
+}

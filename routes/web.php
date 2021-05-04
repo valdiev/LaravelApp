@@ -18,7 +18,7 @@ Route::get('/', [FirstController::class, 'index']);
 
 Route::get('/about', [FirstController::class, 'about']);
 
-Route::get('/article/{id}', [FirstController::class, 'article']) ->where("id", "[0-9]+");
+Route::get('/article/{id}', [FirstController::class, 'article'])->where("id", "[0-9]+");
 
 Route::get("/create", [FirstController::class, "create"])->middleware("auth");
 
@@ -28,11 +28,13 @@ Auth::routes();
 
 Route::get('/users/{id}', [FirstController::class, 'users']);
 /*Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');*/
-Route::get('/changesuivi/{id}', [FirstController::class, 'changesuivi'])->where("id", "[0-9]+") ->middleware("auth");
-Route::get('/likes/{id}', [FirstController::class, 'likes'])->where("id", "[0-9]+") ->middleware("auth");
+Route::get('/changesuivi/{id}', [FirstController::class, 'changesuivi'])->where("id", "[0-9]+")->middleware("auth");
+Route::get('/likes/{id}', [FirstController::class, 'likes'])->where("id", "[0-9]+")->middleware("auth");
 
-Route::post('/users/updateoverview', [FirstController::class, 'updateoverview']) ->middleware("auth");
+Route::post('/users/updateoverview', [FirstController::class, 'updateoverview'])->middleware("auth");
 
-Route::get('/newuser', function() {
-    return redirect("/users/".Auth::id());
+Route::get('/newuser', function () {
+    return redirect("/users/" . Auth::id());
 });
+
+Route::get('/search/{s}', [FirstController::class, 'search']);
