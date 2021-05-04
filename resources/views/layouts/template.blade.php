@@ -23,35 +23,43 @@
             <i class="fas fa-user"></i>
               </a>
   </div>
-  <div class="">
-      @guest
-          @if (Route::has('login'))
-              <li class="nav-item">
-                  <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-              </li>
-          @endif
+  <div class="header">
+    <div class="logo">
+        <a href="/">Instagram</a>
+    </div>
+    <div class="dropdown_menu">
+        <button><i class="fas fa-power-off"></i></button>
+            <div class="connexion_menu">
+                @guest
+                    @if (Route::has('login'))
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('login') }}">{{ __('Connexion') }}</a>
+                        </li>
+                    @endif
 
-          @if (Route::has('register'))
-              <li class="nav-item">
-                  <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-              </li>
-          @endif
-      @else
+                    @if (Route::has('register'))
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('register') }}">{{ __('Inscription') }}</a>
+                        </li>
+                    @endif
+                @else
 
-              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="{{ route('logout') }}"
-                     onclick="event.preventDefault();
-                                   document.getElementById('logout-form').submit();">
-                      {{ __('Déconnexion') }}
-                  </a>
+                        <div class="dropdown_menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="{{ route('logout') }}"
+                                onclick="event.preventDefault();
+                                            document.getElementById('logout-form').submit();">
+                                {{ __('Déconnexion') }}
+                            </a></li>
 
-                  <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                      @csrf
-                  </form>
-              </div>
-          
-      @endguest
-  </div>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                @csrf
+                            </form>
+                        </div>
+                    
+                @endguest
+            </div>
+        </div>
+    </div>
 
     <main class="content">
         @yield("content")

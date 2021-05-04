@@ -14,6 +14,61 @@
   color: #000;
   font-size: clamp(18px, 2vw, 22px);
 }
+.container .header {
+  display: flex;
+  justify-content: space-between;
+  height: 80px;
+  align-items: center;
+}
+.container .header .logo a {
+  text-decoration: none;
+}
+.container .header .dropdown_menu {
+  position: relative;
+}
+.container .header .dropdown_menu button {
+  border: 0px;
+  background: none;
+  cursor: pointer;
+}
+.container .header .dropdown_menu button i {
+  font-size: clamp(18px, 2vw, 22px);
+  color: #000;
+}
+.container .header .dropdown_menu .connexion_menu {
+  position: absolute;
+  background: whitesmoke;
+  min-width: 160px;
+  padding: 10px 20px;
+  right: 0;
+  top: 50px;
+  z-index: 10;
+  transform: translateY(-10px);
+  opacity: 0;
+  transition: 0.4s all ease;
+}
+.container .header .dropdown_menu .connexion_menu.show {
+  opacity: 1;
+  transform: translateY(0px);
+}
+.container .header .dropdown_menu .connexion_menu::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  background-color: whitesmoke;
+  transform: rotate(45deg);
+  position: absolute;
+  top: -5px;
+  right: 8px;
+}
+.container .header .dropdown_menu .connexion_menu li {
+  list-style: none;
+  margin: 10px 0;
+}
+.container .header .dropdown_menu .connexion_menu li a {
+  text-decoration: none;
+  color: #000;
+}
 
 html, body {
   padding: 0;
