@@ -72,4 +72,9 @@ class FirstController extends Controller
     Auth::user()->save();
     return back();
   }
+
+  public function search()
+  {
+    return view("firstcontroller.search");
+  }
 }

@@ -36,3 +36,5 @@ Route::post('/users/updateoverview', [FirstController::class, 'updateoverview'])
 Route::get('/newuser', function () {
     return redirect("/users/" . Auth::id());
 });
+
+Route::get('/search', [FirstController::class, 'search']);
