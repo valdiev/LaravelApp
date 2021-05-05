@@ -90,6 +90,7 @@ html, body {
   flex-wrap: wrap;
   margin: auto;
   justify-content: center;
+  margin-bottom: 80px;
 }
 .album .pic {
   width: 300px;
@@ -213,6 +214,7 @@ body.search-active {
   padding: 0.5rem;
   border: 1px solid #5c5c5c;
   border-radius: 0.5rem;
+  width: 300px;
 }
 
 .submit {
@@ -221,8 +223,12 @@ body.search-active {
   padding: 0.5rem;
   border: 0;
   border-radius: 0.3rem;
+  width: 100px;
+  margin: 20px 0;
 }
-
+.form-group {
+  margin: 20px 0;
+}
 .navItems {
   list-style: none;
   display: flex;
