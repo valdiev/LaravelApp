@@ -211,3 +211,9 @@ html, body {
     justify-content: center;
   }
 }
+.searchInput {
+  width: 250px;
+  padding: 8px;
+  border-radius: 5px;
+  border: 0.5px solid;
+}

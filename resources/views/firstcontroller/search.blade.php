@@ -2,6 +2,6 @@
 
 @section("content")
 <form>
-    <input type="text" name="search" placeholder="Rechercher" /><i class="fas fa-search">
+    <input class="searchInput" type="text" name="search" placeholder="Rechercher" /><i class="fas fa-search">
 </form>
 @endsection
