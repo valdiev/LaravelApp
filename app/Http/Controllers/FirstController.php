@@ -73,8 +73,10 @@ class FirstController extends Controller
     return back();
   }
 
-  public function search()
+  public function search($s)
   {
-    return view("firstcontroller.search");
+    $photos = Photo::whereRaw("title like concat('%',?,'%')", [$s])->orderBy('title', 'desc')->get();
+    return view("firstcontroller.search", ["photos" => $photos]);
+
   }
 }

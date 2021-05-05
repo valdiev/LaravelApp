@@ -37,4 +37,4 @@ Route::get('/newuser', function () {
     return redirect("/users/" . Auth::id());
 });
 
-Route::get('/search', [FirstController::class, 'search']);
+Route::get('/search/{s}', [FirstController::class, 'search']);
