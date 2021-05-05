@@ -37,7 +37,7 @@ class DatabaseSeeder extends Seeder
           DB::table('photos')->insert([
               'title' => Str::random(10),
               'url' => "/images/$i.jpg",
-              'note' => $i * 2,
+            //   'note' => $i * 2,
               "user_id" => $i % 2 + 1,
           ]);
       }
