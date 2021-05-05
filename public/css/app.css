@@ -86,12 +86,12 @@ html, body {
   display: flex;
   flex-wrap: wrap;
   margin: auto;
-  justify-content: flex-start;
+  justify-content: center;
 }
 .album .pic {
-  width: 320px;
-  height: 320px;
-  margin: 20px 0;
+  width: 300px;
+  height: 300px;
+  margin: 20px;
   position: relative;
 }
 .album .pic img {
@@ -216,4 +216,9 @@ html, body {
   padding: 8px;
   border-radius: 5px;
   border: 0.5px solid;
+}
+
+.searchSubmit {
+  margin-left: 2px;
+  padding: 6px;
 }
