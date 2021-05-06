@@ -14,7 +14,6 @@
 
   <input type="file" name="image" class="file" placeholder="upload de la photo" required>
   <input type="text" name="title" class="input" placeholder="titre de la photo" required value="{{ old('title') }}">
-  <input type="number" name="note" class="input" placeholder="note de la photo" required value="{{ old('note') }}">
   <input class="submit" type="submit">
 
 </form>

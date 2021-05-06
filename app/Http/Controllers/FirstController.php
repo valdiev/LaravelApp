@@ -29,7 +29,6 @@ class FirstController extends Controller
   {
     $request->validate([
       'title' => 'required|min:3|max:255',
-      'note' => 'numeric|min:0|max:20',
       'image' => 'required|mimes:jpg,bmp,png'
     ]);
 
@@ -40,7 +39,6 @@ class FirstController extends Controller
     $request->file("image")->move("images/upload/" . Auth::id(), $name);
     $p->url = "/images/upload/" . Auth::id() . "/$name";
 
-    $p->note = $request->input("note");
     $p->user_id = Auth::id();
     $p->save(); // INSERT .....
     return redirect("/");
@@ -73,9 +71,11 @@ class FirstController extends Controller
     return back();
   }
 
-  public function search()
+  public function search($s)
   {
-    return view("firstcontroller.search");
+    $photos = Photo::whereRaw("title like concat('%',?,'%')", [$s])->orderBy('title', 'desc')->get();
+    return view("firstcontroller.search", ["photos" => $photos]);
+
   }
 
   public function updateImage(Request $request)

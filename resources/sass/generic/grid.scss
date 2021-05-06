@@ -11,9 +11,9 @@ html, body {
 .album {
     display: flex;
     flex-wrap: wrap;
-    // max-width: 1200px;
     margin: auto;
     justify-content: center; 
+    margin-bottom: 60px;
 
     .pic {
         width: 300px;
