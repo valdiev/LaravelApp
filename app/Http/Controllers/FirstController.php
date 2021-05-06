@@ -77,4 +77,14 @@ class FirstController extends Controller
   {
     return view("firstcontroller.search");
   }
+
+  public function updateImage(Request $request)
+  {
+    if ($request->hasFile('image')) {
+      $filename = $request->image->getClientOriginalName();
+      $request->image->storeAs('images', $filename, 'public');
+      Auth()->user()->update(['image' => $filename]);
+    }
+    return redirect()->back();
+  }
 }

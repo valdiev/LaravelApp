@@ -4,9 +4,17 @@
 @section("content")
 
 <h1 class="userName">{{$user->name}}</h1>
-<!-- <div class="img_profil">
-  <img src="{{$user->profil}}" alt="{{$user->name}}">
-</div> -->
+
+<div class="img_profil">
+  @if(Auth::check() && Auth::id() == $user->id)
+  <img class="img" src="{{$user->image}}" alt="{{$user->name}}" style="width: 80px;height: 80px; padding: 10px; margin: 0px;">
+  <form action="/users/updateImage" method="POST">
+    @csrf
+    <input type="file" name="image">
+    <input type="submit" value="Upload">
+  </form>
+  @endif
+</div>
 <ul class="navItems">
   <li>
     <p>{{$user->photos->count()}}<br>publications</p>

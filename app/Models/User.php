@@ -20,6 +20,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'image',
     ];
 
     /**
@@ -41,22 +42,26 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function photos() {
+    public function photos()
+    {
         // SELECT * FROM photos WHERE user_id = $this->id
         return $this->hasMany("App\Models\Photo", "user_id");
     }
 
-    public function IFollowThem() {
+    public function IFollowThem()
+    {
         return $this->belongsToMany("App\Models\User", "connexion", "from_id", "to_id");
         // SELECT * FROM uers JOIN connexion ON connexion.to_id=users.id WHERE from_id = $this->id
     }
 
-    public function theyFollowMe() {
+    public function theyFollowMe()
+    {
         return $this->belongsToMany("App\Models\User", "connexion", "to_id", "from_id");
         // SELECT * FROM uers JOIN connexion ON connexion.from_id=users.id WHERE to_id = $this->id
     }
 
-    public function likes() {
+    public function likes()
+    {
         return $this->belongsToMany("App\Models\Photo", "likes", "user_id", "photo_id");
     }
 }
